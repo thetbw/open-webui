@@ -822,6 +822,7 @@ jobs:
 
   # Copy images from GHCR to Docker Hub (best-effort, won't block GHCR)
   copy-to-dockerhub:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     #if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
     needs: [merge-main-images, merge-slim-images]
